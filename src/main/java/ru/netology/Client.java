@@ -45,7 +45,7 @@ public class Client {
 
         List<Cats> cats = mapper.readValue(response.getEntity().getContent(), new TypeReference<List<Cats>>() {});
         cats.stream()
-                .filter(value -> value.getUpvotes() != null)
+                .filter(value -> value.getUpvotes() != 0)
                 .forEach(System.out::println);
 
     }
